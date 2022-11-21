@@ -14,10 +14,10 @@ app.use(helmet());
 
 const queryParams = {
    grant_type: "password",
-   client_id: process.env.LOGIN_CLIENT_ID,
-   client_secret: process.env.LOGIN_CLIENT_SECRET,
-   username: process.env.LOGIN_USERNAME,
-   password: process.env.LOGIN_PASSWORD
+   client_id: process.env.RENDER_LOGIN_CLIENT_ID,
+   client_secret: process.env.RENDER_LOGIN_CLIENT_SECRET,
+   username: process.env.RENDER_LOGIN_USERNAME,
+   password: process.env.RENDER_LOGIN_PASSWORD
 };
 
 let responseData = null;
@@ -34,4 +34,7 @@ axios
 
 app.get("/", (req, res) => {
     res.json(responseData);
+    res.end();
 });
+
+app.listen(PORT, () => console.log(`Hello world app listening on port ${PORT}!`));
