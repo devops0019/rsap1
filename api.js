@@ -22,7 +22,7 @@ const queryParams = {
    password: process.env.RENDER_LOGIN_PASSWORD
 };
 
-app.post("/createlead", (req, res) => {
+app.post("/create", (req, res) => {
 
     let request = req.body;
     let result = null;
